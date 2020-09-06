@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 #  Deze tool berekent de leeftijd en leeftijd in Venusjaren
+=======
+#  Deze tool berekent je leeftijd in Venusjaren
+>>>>>>> e9897e8a3b9cfbb7b9c9def374deb2ab47454d97
 #  Door Nikita Verhoeven
 
 import datetime as dt
 
+<<<<<<< HEAD
 #  Toekennen van variabele om huidige datum te kunnen tonen en om het huidige jaar
 #  in de berekening te kunnen meenemen
 nu = dt.datetime.now()
@@ -32,4 +37,26 @@ leeftijd_in_venusjaren = leeftijd / venusjaar_verhouding
 print("Beste " + naam + ", in "
       + str(nu.year) + " zal je leeftijd op aarde "
       + str(leeftijd) + " zijn.")
+=======
+nu = dt.datetime.now()  #  datum van vandaag
+
+venusjaar_verhouding = 0.62  #  Venus draait 0.62 keer zo snel om de zon als de Aarde
+
+#  Wat de console toont:
+print("Wat is je naam?")  #  vraag om naam
+naam = input()  #  invoer toekennen variabele 'naam'
+
+print("Wat is je geboortejaar?")  #  vraag om geboortejaar
+geboortejaar = int(input())  #  invoer geboortejaar
+
+leeftijd = nu.year - geboortejaar  #  berekening leeftijd in jaren
+leeftijd_in_venusjaren = leeftijd / venusjaar_verhouding #  berekening leeftijd in venusjaren
+
+#  Toont huidige jaar en berekende leeftijd in een string
+print("Beste " + naam + ", in "
+      + str(nu.year) + " zal je leeftijd op aarde "
+      + str(leeftijd) + " zijn.")
+
+#  Toont leeftijd in Venusjaren in een string
+>>>>>>> e9897e8a3b9cfbb7b9c9def374deb2ab47454d97
 print("En je leeftijd is dan " + str(leeftijd_in_venusjaren) + " in Venusjaren.")
