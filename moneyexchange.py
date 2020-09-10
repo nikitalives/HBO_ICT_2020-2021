@@ -9,30 +9,33 @@ JP_YEN = 125.317
 #  Vraag om input zodat de juiste valuta wordt genomen
 
 valuta = int(input("Kies een valuta. Valuta: 1 = US Dollar, "
-                   "2 = GB pounds, 3 = Yen: "))
+                   "2 = GB Pounds, 3 = Yen: "))
 wisselbedrag = int(input("In te wisselen bedrag: "))
 
 #  If else statement die checkt welke soort valuta wordt gegeven
+
+
+if valuta == 1:
+    valuta_invoer = "Dollar"
+    te_ontvangen_bedrag = wisselbedrag / US_DOLLAR   
+elif valuta == 2:
+    valuta_invoer = "Pounds"
+    te_ontvangen_bedrag = wisselbedrag / GB_POUNDS
+    format(te_ontvangen_bedrag, '.2f')
+elif valuta == 3:
+    valuta_invoer = "Yen"
+    te_ontvangen_bedrag = wisselbedrag / JP_YEN
+    format(te_ontvangen_bedrag, '.2f')
+    
+else:
+    print("Kies voor 1, 2 of 3.")  ## wanneer er niet voor 1 2 of 3 wordt gekozen
+
 #  Print vervolgens het bedrag + omgerekende bedrag en de juiste valuta
 #  format functie zorgt voor afgeronde op 2 decimalen
 
-if valuta == 1:
-    te_ontvangen_bedrag = wisselbedrag / US_DOLLAR
-    format(te_ontvangen_bedrag, '.2f')
-    print("Voor " + str(wisselbedrag) + " Dollar krijgt u "
+format(te_ontvangen_bedrag, '.2f')    
+print("Voor " + str(wisselbedrag) + " " + valuta_invoer + " krijgt u "
           + str(format(te_ontvangen_bedrag, '.2f')) + " Euro.")
-elif valuta == 2:
-    te_ontvangen_bedrag = wisselbedrag / GB_POUNDS
-    format(te_ontvangen_bedrag, '.2f')
-    print("Voor " + str(wisselbedrag) + " Pond krijgt u "
-          + str(format(te_ontvangen_bedrag, '.2f')) + " Euro.")
-elif valuta == 3:
-    te_ontvangen_bedrag = wisselbedrag / JP_YEN
-    format(te_ontvangen_bedrag, '.2f')
-    print("Voor " + str(wisselbedrag) + " Yen krijgt u "
-          + str(format(te_ontvangen_bedrag, '.2f')) + " Euro.")
-else:
-    print("Kies voor 1, 2 of 3.")  ## wanneer er niet voor 1 2 of 3 wordt gekozen
 
 #  Berekent transactiekosten van 1.5 procent over het te ontvangen bedrag
 
