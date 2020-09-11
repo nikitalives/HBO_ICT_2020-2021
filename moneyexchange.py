@@ -14,28 +14,23 @@ wisselbedrag = int(input("In te wisselen bedrag: "))
 
 #  If else statement die checkt welke soort valuta wordt gegeven
 
-
 if valuta == 1:
     valuta_invoer = "Dollar"
-    te_ontvangen_bedrag = wisselbedrag / US_DOLLAR   
+    te_ontvangen_bedrag = wisselbedrag / US_DOLLAR
 elif valuta == 2:
     valuta_invoer = "Pounds"
     te_ontvangen_bedrag = wisselbedrag / GB_POUNDS
-    format(te_ontvangen_bedrag, '.2f')
 elif valuta == 3:
     valuta_invoer = "Yen"
     te_ontvangen_bedrag = wisselbedrag / JP_YEN
-    format(te_ontvangen_bedrag, '.2f')
-    
 else:
     print("Kies voor 1, 2 of 3.")  ## wanneer er niet voor 1 2 of 3 wordt gekozen
 
-#  Print vervolgens het bedrag + omgerekende bedrag en de juiste valuta
 #  format functie zorgt voor afgeronde op 2 decimalen
+#  Print vervolgens het bedrag + omgerekende bedrag en de juiste valuta
 
-format(te_ontvangen_bedrag, '.2f')    
 print("Voor " + str(wisselbedrag) + " " + valuta_invoer + " krijgt u "
-          + str(format(te_ontvangen_bedrag, '.2f')) + " Euro.")
+      + str(format(te_ontvangen_bedrag, '.2f')) + " Euro.")
 
 #  Berekent transactiekosten van 1.5 procent over het te ontvangen bedrag
 
@@ -52,6 +47,6 @@ else:
 #  het te ontvangen bedrag min de transactiekosten
 
 eindbedrag = te_ontvangen_bedrag - transactie_kosten
-print("De transactiekosten bedragen " + str(transactie_kosten)
+print("De transactiekosten bedragen " + str(format(transactie_kosten,'.2f'))
       + " Euro. U ontvangt " + str(format(eindbedrag, '.2f')) + " Euro.")
 
