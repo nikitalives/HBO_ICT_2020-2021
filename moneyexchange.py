@@ -33,8 +33,8 @@ print("Voor " + str(wisselbedrag) + " " + valuta_invoer + " krijgt u "
       + str(format(te_ontvangen_bedrag, '.2f')) + " Euro.")
 
 #  Berekent transactiekosten van 1.5 procent over het te ontvangen bedrag
-
-transactie_kosten = te_ontvangen_bedrag * 0.015
+PERCENTAGE_TRANSACTIEKOSTEN = 0.015
+transactie_kosten = te_ontvangen_bedrag * PERCENTAGE_TRANSACTIEKOSTEN
 
 #  Checkt of de transactiekosten 2 euro of lager is, bij lager dan 2 euro
 #  zijn de transactiekosten altijd 2 euro
